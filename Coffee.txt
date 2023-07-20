@@ -1,0 +1,25 @@
+☕Команден блок 1(Repeat/Unconditional/Always Active) 
+/execute as @e[type=player, nbt={Inventory:[{Slot:-106b, id:"minecraft:player_head", tag:{display:{Name:"{\"text\":\"Cup with Cofee\",\"color\":\"white\"}", Lore:['{"color":"yellow","text":"с 5% кофеин"}','{"color":"green","text":"Пие се с F"}']}}}]}] at @s run playsound minecraft:entity.generic.drink player @s ~ ~ ~ 0.65 1 0
+
+☕Команден блок 2(Chain/Conditional/Always Active) 
+/execute as @e[type=player, nbt={Inventory:[{Slot:-106b, id:"minecraft:player_head", tag:{display:{Name:"{\"text\":\"Cup with Cofee\",\"color\":\"white\"}", Lore:['{"color":"yellow","text":"с 5% кофеин"}','{"color":"green","text":"Пие се с F"}']}}}]}] at @s run scoreboard players add @s CofeeDrinking 1
+
+☕Команден блок 3(Chain/Conditional/Always Active) 
+/execute as @e[type=player, scores={CofeeDrinking=5..}] at @s run clear @s minecraft:player_head{display:{Name:"{\"text\":\"Cup with Cofee\",\"color\":\"white\"}", Lore:['{"color":"yellow","text":"с 5% кофеин"}','{"color":"green","text":"Пие се с F"}']}} 1
+
+☕Команден блок 4(Chain/Conditional/Always Active) 
+/execute as @e[type=player, scores={CofeeDrinking=5..}] at @s run give @s minecraft:player_head{display:{Name:"{\"text\":\"Empty Cup\",\"color\":\"white\"}", Lore:['{"color":"green","text":"напълни ме"}']},SkullOwner:{Id:[I;1176276444,967657176,-1996008735,-1173811510],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTMzZWE2ZmNmNGIyODkzOWEzZThlZDhjMjdmYjg5ODgyZGQ4MzA5YjJlMmE2NjlkOWQ5OGU0YjMzYTczNzRjIn19fQ=="}]}}} 1
+
+☕Команден блок 5(Chain/Conditional/Always Active) 
+/execute as @e[type=player, scores={CofeeDrinking=5..}] at @s run playsound minecraft:entity.player.burp player @s ~ ~ ~ 10 1 1
+
+/execute as @e[type=player, scores={CofeeDrinking=5..}] as @s run effect give @s minecraft:speed 10 0 true
+
+☕Команден блок 7(Chain/Conditional/Always Active) 
+/execute as @e[type=player, scores={CofeeDrinking=5..}] at @s run scoreboard players set @s CofeeDrinking 0
+
+☕Тази команда я изписваш един пър в чата
+/scoreboard objectives add CofeeDrinking dummy
+
+☕Команда за взимане на чаша с кафе(InpulseUnconditionalNeed Redstone) 
+/summon minecraft:item ~ ~1 ~ {Item:{id:"minecraft:player_head",Count:1b,tag:{display:{Name:"{\"text\":\"Cup with Cofee\",\"color\":\"white\"}", Lore:['{"color":"yellow","text":"с 5% кофеин"}','{"color":"green","text":"Пие се с F"}']},SkullOwner:{Id:[I;-1513351130,1351370996,-1551837317,-2013369534],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjM1ZTNkZGZlOGY5YjUxNjNjZTdjYmE3MTU0ODQ0MTE0NTM3YTQzMTAyZTBmOGE3ODIxZTU5YzY1OWVmMjU3MyJ9fX0="}]}}}}}
